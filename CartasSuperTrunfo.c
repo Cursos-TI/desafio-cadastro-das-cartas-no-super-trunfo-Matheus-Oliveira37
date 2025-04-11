@@ -13,6 +13,7 @@ int main() {
     int pontos; // Pontos turísticos da carta
     float densidade; // Densidade populacional da carta
     float PIBpercapita; // PIB per capita da carta
+    float superpoder; // Superpoder da carta
 
     // Variáveis da carta 2
 
@@ -25,6 +26,9 @@ int main() {
     int pontos2; // Pontos turísticos da carta 2
     float densidade2; // Densidade populacional da carta 2
     float PIBpercapita2; // PIB per capita da carta 2
+    float superpoder2; // Superpoder da carta 2
+
+    int resultadoCartas; // Resultado da comparação das cartas
 
     // Cadastro da Carta 1
 
@@ -83,7 +87,8 @@ int main() {
     printf("--------------------------------------\n"); // Linha de separação
 
     // Exibição das Cartas
-    
+    // Exibição da carta 1
+
     printf("Cartas cadastradas:\n"); // Título da exibição
     printf("--------------------------------------\n"); // Linha de separação
     printf("Carta 1:\n"); // Título da carta 1
@@ -98,8 +103,12 @@ int main() {
     printf("Densidade Populacional - %.2f habitantes/km²\n", densidade); // Exibição da densidade populacional
     PIBpercapita = PIB / populacao; // Cálculo do PIB per capita
     printf("PIB per capita - %.2f\n", PIBpercapita); // Exibição do PIB per capita
+    superpoder = (float) populacao + area + PIB + pontos + densidade + PIBpercapita; // Cálculo do superpoder
+    printf("Superpoder - %.2f\n", superpoder); // Exibição do superpoder
 
     printf("--------------------------------------\n"); // Linha de separação
+
+    // Exibição da carta 2
 
     printf("Carta 2:\n"); // Título da carta 2
     printf("Estado - %c\n", estado2); // Exibição do estado 2
@@ -113,6 +122,32 @@ int main() {
     printf("Densidade Populacional - %.2f habitantes/km²\n", densidade2); // Exibição da densidade populacional 2
     PIBpercapita2 = PIB2 / populacao2; // Cálculo do PIB per capita 2
     printf("PIB per capita - %.2f\n", PIBpercapita2); // Exibição do PIB per capita 2
+    superpoder2 = (float) populacao2 + area2 + PIB2 + pontos2 + densidade2 + PIBpercapita2; // Cálculo do superpoder 2
+    printf("Superpoder - %.2f\n", superpoder2); // Exibição do superpoder 2
+
+    printf("--------------------------------------\n"); // Linha de separação
+
+    // Comparação das cartas
+
+    printf("Comparação das cartas:\n"); // Título da comparação
+    printf("População - %d\n", (int) populacao > populacao2); // Comparação da população
+    printf("Área - %d\n", (int) area > area2); // Comparação da área
+    printf("PIB - %d\n", (int) PIB > PIB2); // Comparação do PIB
+    printf("Pontos Turísticos - %d\n", (int) pontos > pontos2); // Comparação dos pontos turísticos
+    printf("Densidade Populacional - %d\n", (int) densidade < densidade2); // Comparação da densidade populacional
+    printf("PIB per capita - %d\n", (int) PIBpercapita > PIBpercapita2); // Comparação do PIB per capita
+    printf("Superpoder - %d\n", (int) superpoder > superpoder2); // Comparação do superpoder
+
+    printf("--------------------------------------\n"); // Linha de separação
+    resultadoCartas = (int) populacao > populacao2; // Comparação da população
+    resultadoCartas = (int) area > area2; // Comparação da área
+    resultadoCartas = (int) PIB > PIB2; // Comparação do PIB
+    resultadoCartas = (int) pontos > pontos2;  // Comparação dos pontos turísticos
+    resultadoCartas = (int) densidade < densidade2; // Comparação da densidade populacional
+    resultadoCartas = (int) PIBpercapita > PIBpercapita2; // Comparação do PIB per capita
+    resultadoCartas = (int) superpoder > superpoder2; // Comparação do superpoder
+    printf("Resultado: %d\n", resultadoCartas); // Exibição do resultado da comparação
+
 
 
     return 0;
